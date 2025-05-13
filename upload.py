@@ -16,11 +16,8 @@ for filename in os.listdir(source_dir):
 
     
     if os.path.isfile(local_file_path):
-        # Create a blob (object) in the bucket with the same name as the local file
-        blob = bucket.blob(filename)
-
-        # Upload the file to Google Cloud Storage
+        gcs_path = f"{source_dir}/{filename}"
+        blob = bucket.blob(gcs_path)
         blob.upload_from_filename(local_file_path)
-
-        print(f"File {filename} uploaded to gs://{bucket_name}/faiss_index/{filename}")
+        print(f"Uploaded {local_file_path} to gs://{bucket_name}/{gcs_path}")
 
