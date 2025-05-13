@@ -15,7 +15,7 @@ import re
 
 
 
-pdf_folder_path = "content/"
+pdf_folder_path = "contents/"
 
 pdf_loaders = []
 for file in os.listdir(pdf_folder_path):
