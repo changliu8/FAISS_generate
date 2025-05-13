@@ -22,5 +22,5 @@ for filename in os.listdir(source_dir):
         # Upload the file to Google Cloud Storage
         blob.upload_from_filename(local_file_path)
 
-        print(f"File {filename} uploaded to gs://{bucket_name}/{filename}")
+        print(f"File {filename} uploaded to gs://{bucket_name}/faiss_index/{filename}")
 
